@@ -163,6 +163,7 @@
   },
   "active": "dd8537ab1e04d60e",
   "lastOpenFiles": [
+    "README.md",
     "Demos/walt.id_My_first_VC_docker_demo/data/policies/MyPolicy",
     "Demos/walt.id_My_first_VC_docker_demo/data/policies",
     "Demos/walt.id_My_first_VC_docker_demo/data/credential-store/custodian/diploma.cred",
@@ -173,7 +174,6 @@
     "Demos/walt.id_My_first_VC_docker_demo/data/credential-store",
     "Demos/walt.id_My_first_VC_docker_demo/data/walt.db",
     "Demos/walt.id_My_first_VC_docker_demo/data/ebsi",
-    "Demos/walt.id_My_first_VC_docker_demo/data/vc/templates",
     "Demos/Demo.md",
     "Demos/walt.id_Dynamic_Policies_Demo/Basic Dynamic Policy demo.md",
     "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
