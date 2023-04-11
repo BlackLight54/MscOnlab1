@@ -174,9 +174,11 @@
   },
   "active": "ec26941c527708c3",
   "lastOpenFiles": [
+
     "docs/Install Open Policy Agent.md",
     "README.md",
     "docs/Install walt.id.md",
+
     "Önlab.md",
     "Demos/walt.id_Dynamic_Policies_Demo/docker-compose.yml",
     "Demos/Demo.md",
