@@ -111,4 +111,69 @@ val applyToVP: Boolean = false
 ## Issuance OIDC4CI
 ## Presentation OIDC4VP
 
-TODO: példa walt-ban VC ellenőrzésre egy VC-ben leírt policy-t, amit OPA rego segítségével értékelünk ki, use-case gázártámogatás: dinamikusan változik a támogatás, a VC egy állítás azzal kapcsolatban, hogy jogosult vagyok valamennyi gázártámogatásra, a VS akkor érvényes, ha kiszámíthatóan
+- [ ] TODO: példa walt-ban VC ellenőrzésre egy VC-ben leírt policy-t, amit OPA rego segítségével értékelünk ki, use-case gázártámogatás: dinamikusan változik a támogatás, a VC egy állítás azzal kapcsolatban, hogy jogosult vagyok valamennyi gázártámogatásra, a VS akkor érvényes, ha kiszámíthatóan
+
+# 7. hét 
+## Saját rego policy használata walt.id-ben
+szükséges api hívások postman-ben, workspace id: 082571e2-c81f-48f1-8831-c147a489520e
+
+basic.rego:
+``` rego
+package system
+default main = false
+
+main {
+	regex.match(input.credentialData.credentialSubject.id)
+}
+```
+
+>[!warning] Nagyon rossz az API leírás
+>több helyen elvault információt közöl, ütköznek a magyarázatok, a Swaggerben nincs default, hogy tudni lehessen mi a friss, a választörzsek olykor sokat segítenek, olykor semmitmondóak, küzdelem volt
+>Tippre a friss az [ez](https://docs.walt.id/v/ssikit/concepts/verification-policies/dynamic-policies)
+
+- [x] TODO: Basic Dynamic policy .rego source-ból
+Válasz!:
+``` json
+{
+    "valid": true,
+    "results": [
+        {
+            "result": true,
+            "policyResults": {
+                "SignaturePolicy": {
+                    "isSuccess": true,
+                    "isFailure": false
+                },
+                "MyPolicy": {
+                    "isSuccess": true,
+                    "isFailure": false
+                }
+            },
+            "valid": true
+        }
+    ]
+}
+```
+- [ ] TODO: Create template for VC-s that contain a policy 
+- [ ] TODO: Dynamic Policy Json(VC) -ből; ötlet: verifikálandó VC és policy VC elkülönítése VP-vel
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva, inputtól függően
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva, inputtól függően, külső adatot (OPA DATA) használva 
+
+
+> [!question] Where is the "data"? 
+> In OPA there are two global objects, the INPUT and the DATA
+> with walt.id, the `dataPath` variable points to the data in the credential, but is accesed in opa as `input.credentialData`
+> So my question is how can I acces this DATA object in walt.id? is it a database? how do i connect i
+
+Policy-t publikál a Minisztérium vc-ként, ideálisan updatelhető módon egy trusted vrified registryn, publikusan
+
+End user magának helyben le tudja futtattatni otthon is, input a fogyasztás, és egy két igazoló VC, vulnerable status-ről, hogy mennyi fogyasztásra jogosult
+
+Köv. lépés: privacy - ne lássák mennyi supportot kaptam; ne tudják mi miatt kaptam támogatást
+- [ ] TODO: kérdés: milyen ZKP-ra integrálható a rego mint deklaratív nyelv
+- [ ] TODO: Kérdés: walt-nak, van-e=(lesz-e) kivezetése a OPA eredmények
+
+READ: [You Can’t Spell Identity without an “I”](https://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html)
+
+
