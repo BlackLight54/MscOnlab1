@@ -1,0 +1,15 @@
+version: '2'
+services:
+  walt-id:
+    image: waltid/ssikit:latest
+    ports:
+      - 7000:7000
+      - 7001:7001
+      - 7002:7002
+      - 7003:7003
+      - 7004:7004
+      - 7010:7010
+    command: "serve -b 0.0.0.0"
+    volumes:
+      - ./data:/app/data
+    # network_mode: host
