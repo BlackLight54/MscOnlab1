@@ -16,69 +16,74 @@ default policyParameters := {
 			"high": 20,
 		},
 	},
-	"supports": {"rollingConsumption": {
-		"low": {"currentSaving": {
-			"low": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"mid": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"high": {
-				"type": "percentage",
-				"value": 10,
-			},
-		}},
-		"mid": {"currentSaving": {
-			"low": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"mid": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"high": {
-				"type": "percentage",
-				"value": 10,
-			},
-		}},
-		"high": {"currentSaving": {
-			"low": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"mid": {
-				"type": "percentage",
-				"value": 10,
-			},
-			"high": {
-				"type": "percentage",
-				"value": 10,
-			},
-		}},
-	}},
+	"supports": {
+		#rows: rollingConsumption
+		#cols: currentSaving
+		"low": {"low": ["percent", 10], "mid": ["percent", 10], "high": ["percent", 10]},
+		"mid": {"low": ["percent", 10], "mid": ["percent", 10], "high": ["percent", 10]},
+		"high": {"low": ["percent", 10], "mid": ["percent", 10], "high": ["percent", 10]},
+	},
 	"socialSupports": {"ChangedWorkcapacity": {
 		"credentialType": "ChangedWorkcapacityCredential",
-		"type": "nominal",
-		"value": 1000,
+		"support": ["nominal", 1000],
 	}},
 }
 
-supportCreds contains cred if {
-	cred := input.credentialData.credentials[_]
-	cred.type[_] ==  policyParameters.socialSupports[_].credentialType
-}
 
 pastConsumptionCred := cred if {
 	cred := input.credentialData.credentials[_]
 	cred.type[_] == "ProofOfActualGasConsumptionCredential"
 }
+consumptionClass := "high" if {
+	policyParameters.thresholds.rollingConsumption.high < currentConsumption
+}
 
+else := "mid" if {
+	policyParameters.thresholds.rollingConsumption.mid < currentConsumption
+}
+
+else := "low"
 currentConsumption := input.parameter.consumption
+
+currentSavingsClass := "high" if {
+	policyParameters.thresholds.currentSaving.high < pastConsumptionCred.consumption - currentConsumption
+}
+
+else := "mid" if {
+	policyParameters.thresholds.currentSaving.mid < pastConsumptionCred.consumption - currentConsumption
+}
+
+else := "low" if {
+	policyParameters.thresholds.currentSaving.low < pastConsumptionCred.consumption - currentConsumption
+}
+
+applySupport(support, base) := base * multiplier if {
+	[type, percent] := support
+	type == "percent"
+	multiplier := 1 - (0.01 * percent)
+}
+
+applySupport(support, base) := base - value if {
+	[type, value] := support
+	type == "nominal"
+}
+
+
+
 currentPrice := input.parameter.price
+
+paymentBase := res if {
+	currentPrice.unit == "HUF"
+	res := currentConsumption * currentPrice.amount
+}
+
+paymentAfterSavings := applySupport(policyParameters.supports[consumptionClass][currentSavingsClass], paymentBase)
+
+socialSuports contains [cred, support] if {
+	cred := input.credentialData.credentials[_]
+	cred.type[_] == policyParameters.socialSupports[_].credentialType
+	support := policyParameters.socialSupports[_]
+}
 
 default allow := false
 
