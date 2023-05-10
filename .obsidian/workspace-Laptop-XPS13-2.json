@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Önlab.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,19 +25,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "file": "Önlab.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "c52716b34d87eddd",
+            "id": "dd8537ab1e04d60e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Components.md",
+                "file": "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "file": "Önlab.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "file": "Önlab.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md"
+                "file": "Önlab.md"
               }
             }
           }
@@ -174,30 +174,25 @@
   },
   "active": "ec26941c527708c3",
   "lastOpenFiles": [
-    "Önlab.md",
-    "ComplexOPAPolicy-Ártámogatás/Design.md",
-    "ComplexOPAPolicy-Ártámogatás/Components.md",
-    "README.md",
-    "!skeletonVP.json.md",
-    "ComplexOPAPolicy-Ártámogatás/skeletonUserInput.json",
-    "ComplexOPAPolicy-Ártámogatás/policy.rego",
-    "ComplexOPAPolicy-Ártámogatás/skeletonVP.json",
-    "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
-    "Untitled.md",
-    "Untitled",
-    "ComplexOPAPolicy-Ártámogatás",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/policies/Basic+VP",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/did/created/did%3Akey%3Az6MkkVvhp8udWprohnmPQbC2apdnqjrEjuSUVWaJ6QXQcyhB",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/walt.db-journal",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/did/created/did%3Akey%3Az6MkuUdepm5q7TXKwLnzsjBEvYA56uAourh7WL3kstAr2AxT",
-    "local/waltid-ssikit/src/test/resources/diagram-0.png",
-    "local/waltid-ssikit/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream",
-    "local/waltid-ssikit/assets/logos-supporter.png",
+    "local/waltid-ssikit/src/test/kotlin/id/walt/services/essif/jsonrpc/JsonRpcServiceTest.kt",
+    "local/waltid-ssikit/src/test/kotlin/id/walt/services/essif/jsonrpc",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/cheqd/DidCheqdResolutionResponse.kt",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/cheqd/CheqdService.kt",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/cheqd",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/essif/TrustedIssuerClient.kt",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/essif",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/iota/IotaWrapper.kt",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/iota",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/gaiax/GaiaxService.kt",
+    "local/waltid-ssikit/src/main/kotlin/id/walt/services/ecosystems/gaiax",
     "local/waltid-ssikit/CHANGELOG.md",
     "local/waltid-ssikit/CODE_OF_CONDUCT.md",
     "local/waltid-ssikit/CONTRIBUTING.md",
     "local/waltid-ssikit/README.md",
+    "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
+    "Önlab.md",
     "docs/opa-service.svg",
+    "README.md",
     "docs/Install Open Policy Agent.md",
     "docs/Install walt.id.md",
     "Demos/Demo.md",
