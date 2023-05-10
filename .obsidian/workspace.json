@@ -32,6 +32,16 @@
             }
           },
           {
+            "id": "9c2700da7d889c5a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.7"
+              }
+            }
+          },
+          {
             "id": "c52716b34d87eddd",
             "type": "leaf",
             "state": {
@@ -43,8 +53,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,6 +98,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "1cee80c040cf2c5e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -110,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "file": "Önlab.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "file": "Önlab.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md"
+                "file": "Önlab.md"
               }
             }
           }
@@ -172,10 +189,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ec26941c527708c3",
+  "active": "1592971ac07ccf01",
   "lastOpenFiles": [
-    "Önlab.md",
     "ComplexOPAPolicy-Ártámogatás/Design.md",
+    "Önlab.md",
     "ComplexOPAPolicy-Ártámogatás/Components.md",
     "README.md",
     "!skeletonVP.json.md",
