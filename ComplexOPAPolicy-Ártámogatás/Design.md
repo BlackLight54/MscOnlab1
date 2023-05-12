@@ -1,6 +1,6 @@
 # Cél
 Olyan REGO policy(k) elkészítése, amelly(ek)el OPA segítségével, VP alapján ellenőrizni tudjuk, hogy egy adott személy jogosult-e gázártámogatásra, és ha igen, akkor milyen összegben. A policy publikálva van az ellenőrző szerv által, ideálisan valamilyen Trusted Registry-ben(ez lehet akár DLT alapú), a felhasználó így juthat hozzá. A kiértékelés megtörténhet mind az ellenőrző szerv, mind felhasználó oldalán, és ugyan arra az eredményre kell jusson, így biztosítva a bizalmat.
-Ebben a példában a kiértékelés havonta történik, az egy évvel korábbi, azonos havi fogyasztással hasonlítjuk össze az éppen elmúlt havit, ez az [MVM Havi mérőállásközlésen (diktáláson) alapuló elszámolás](https://www.mvmnext.hu/foldgaz/Egyetemes-Szolgaltatas/Ugyintezes/Szamlazas/elszamolasi-es-szamlazasi-rendszer) -al analóg.
+Ebben a példában a kiértékelés havonta történik, az azt megelőző 12 hónap álagával hasonlítjuk össze, ez az [MVM Havi mérőállásközlésen (diktáláson) alapuló elszámolás](https://www.mvmnext.hu/foldgaz/Egyetemes-Szolgaltatas/Ugyintezes/Szamlazas/elszamolasi-es-szamlazasi-rendszer) -al analóg.
 
 # Mi alapján adhatunk támogatást?
 - Gazdaságilag kiszolgáltatott csoporthoz való tartozás
@@ -25,7 +25,7 @@ Az OPA a VC-ket egy Verifiable Presentation formájában kapja meg, amely tartal
 	- Termék neve
 	- Fizetés dátuma
 --->
-- Korábbi fogyasztás igazolása
+- Korábbi fogyasztások igazolása
 	- Hónap, amelyre vonatkozik
 	- Fogyasztás mértéke (m^3)
 
@@ -36,7 +36,8 @@ Példa: ![[skeletonVP.json]]
 - Várt támogatás mennyisége(Ft)
 Példa: 
 >[!info]- Gázár és fogyasztás viszonya
-> A földgáz, mivel k
+> A földgáz esetén  nagyon változó mind szolgáltató, mind a mérőhely szerint a köbméterre vetített érték és ár
+> Emiatt nem fogyasztott köbméterrel számolunk, hanem a az univerzálisnak tekinthető hőértékkel, kWh alapon
 ### Milyen egyéb, ***nem*** felhasználótól származó adatokat kezel a policy?
 - Jelenleg nincs ilyen input
 > [!danger] Nem felhasználótól származó adatok veszélye
@@ -52,5 +53,5 @@ Példa:
 > Több keretrendszer, mint például az általam használt *walt.id*  az OPA-tól nem egy komplex policy kiértékelést vár, hanem pusztán egy igen-nem választ, hogy a kiértékelés során elfogadhatónak találtuk-e az adott query-t 
 
 ## Policy
-Method: Az egyes támogatási formákat külön bontjuk, mindegyik a nagy egészből jelent százalékos vagy konstans levonást, ezek adódnak össze. 
+
 
