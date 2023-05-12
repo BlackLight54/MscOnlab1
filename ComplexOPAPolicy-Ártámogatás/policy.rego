@@ -95,23 +95,28 @@ socialSupports contains [cred, support] if {
 	support := policyParameters.socialSupports[x].support
 }
 
-# applySupports(supports, inValue) := result if {
-# 	otherValuesSum := applySupports(supports, inValue)
-# 	 value := applySupport(supports[0],inValue)
-#      result := otherValuesSum + value 
-# }
+applySupports(supports, Value) := result if {
+	nominalSupports := [value |
+		[type, value] := supports[_]
+		type == "nominal"
+	]
+	percentSupports := [value |
+		[type, value] := supports[_]
+		type == "percent"
+	]
+	result := (Value - sum(nominalSupports)) - (Value * sum(percentSupports))
+}
 
 paymentAfterSupports := value if {
-    some [cred, support] in socialSupports
-    previousValue := paymentAfterSavings
-	value := applySupport(support, previousValue)
+	previousValue := paymentAfterSavings
+	value := applySupports(socialSupports, previousValue)
 }
 
 supportAmount := paymentBase - paymentAfterSupports
 
 default allow := false
 
-allow {
+allow if {
 	supportAmount := paymentBase - paymentAfterSupports
 	supportAmount == input.parameter.expectedSupportAmmount
 }
