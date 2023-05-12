@@ -29,32 +29,46 @@ default policyParameters := {
 	}},
 }
 
-
-pastConsumptionCred := cred if {
-	cred := input.credentialData.credentials[_]
-	cred.type[_] == "ProofOfActualGasConsumptionCredential"
+rollingConsumption := value if {
+	pastConsumptionCreds := [pastConsumptionCred |
+		some cred in input.credentialData.credentials
+		cred.type[_] == "ProofOfActualGasConsumptionCredential"
+		[currentYear, currentMonth, _] := time.date(time.now_ns())
+		months := numbers.range(1, 12)
+		month := months[x]
+		((((currentYear * 12) + currentMonth) - 1) - 12) + month == (to_number(cred.year) * 12) + to_number(cred.month)
+		pastConsumptionCred := cred
+	]
+	count(pastConsumptionCreds) == 12
+	pastConsumptionValues := [value | value := pastConsumptionCreds[_].consumption]
+	count(pastConsumptionValues) == 12
+	value := sum(pastConsumptionValues) / count(pastConsumptionCreds)
 }
+currentConsumption := input.parameter.consumption
+
+#assign consumption class based on rolling consumption
 consumptionClass := "high" if {
-	policyParameters.thresholds.rollingConsumption.high < currentConsumption
+	policyParameters.thresholds.rollingConsumption.high < rollingConsumption
 }
 
 else := "mid" if {
-	policyParameters.thresholds.rollingConsumption.mid < currentConsumption
+	policyParameters.thresholds.rollingConsumption.mid < rollingConsumption
 }
 
 else := "low"
-currentConsumption := input.parameter.consumption
 
+
+#assign savings class based on current consumption
 currentSavingsClass := "high" if {
-	policyParameters.thresholds.currentSaving.high < pastConsumptionCred.consumption - currentConsumption
+	policyParameters.thresholds.currentSaving.high < rollingConsumption - currentConsumption
 }
 
 else := "mid" if {
-	policyParameters.thresholds.currentSaving.mid < pastConsumptionCred.consumption - currentConsumption
+	policyParameters.thresholds.currentSaving.mid < rollingConsumption - currentConsumption
 }
 
 else := "low" if {
-	policyParameters.thresholds.currentSaving.low < pastConsumptionCred.consumption - currentConsumption
+	policyParameters.thresholds.currentSaving.low < rollingConsumption - currentConsumption
 }
 
 applySupport(support, base) := base * multiplier if {
@@ -69,20 +83,28 @@ applySupport(support, base) := base - value if {
 }
 
 
-
-currentPrice := input.parameter.price
-
 paymentBase := res if {
 	currentPrice.unit == "HUF"
-	res := currentConsumption * currentPrice.amount
+	res := currentConsumption * input.parameter.price.amount
 }
 
 paymentAfterSavings := applySupport(policyParameters.supports[consumptionClass][currentSavingsClass], paymentBase)
 
-socialSuports contains [cred, support] if {
+socialSupports contains [cred, support] if {
 	cred := input.credentialData.credentials[_]
-	cred.type[_] == policyParameters.socialSupports[_].credentialType
-	support := policyParameters.socialSupports[_]
+	cred.type[_] == policyParameters.socialSupports[x].credentialType
+	support := policyParameters.socialSupports[x].support
+}
+
+applySupports(supports, inValue) := result if {
+	result :=applySupports(supports)
+	 applySupport(supports[0],inValue)
+}
+
+paymentAfterSupports := value if {
+    some [cred, support] in socialSupports
+    previousValue := paymentAfterSavings
+	value := applySupport(support, previousValue)
 }
 
 default allow := false
