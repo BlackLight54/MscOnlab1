@@ -45,19 +45,18 @@ rollingConsumption := value if {
 	value := sum(pastConsumptionValues) / count(pastConsumptionCreds)
 }
 
-consumptionClass := "high" if {
-	policyParameters.thresholds.rollingConsumption.high < rollingConsumption
+classConsumption := "high" if rollingConsumption >= policyParameters.thresholds.rollingConsumption.high
+
+classConsumption := "mid" if {
+	rollingConsumption >= policyParameters.thresholds.rollingConsumption.mid
+	rollingConsumption < policyParameters.thresholds.rollingConsumption.high
 }
 
-else := "mid" if {
-	policyParameters.thresholds.rollingConsumption.mid < rollingConsumption
-}
-
-else := "low"
+classConsumption := "low" if rollingConsumption < policyParameters.thresholds.rollingConsumption.mid
 
 currentConsumption := input.parameter.consumption
 
-currentSavingsClass := "high" if {
+classSaving := "high" if {
 	policyParameters.thresholds.currentSaving.high < rollingConsumption - currentConsumption
 }
 
@@ -87,13 +86,7 @@ paymentBase := res if {
 	res := currentConsumption * currentPrice.amount
 }
 
-paymentAfterSavings := applySupport(policyParameters.supports[consumptionClass][currentSavingsClass], paymentBase)
-
-socialSupports contains [cred, support] if {
-	cred := input.credentialData.credentials[_]
-	cred.type[_] == policyParameters.socialSupports[x].credentialType
-	support := policyParameters.socialSupports[x].support
-}
+paymentAfterSavings := applySupport(policyParameters.supports[classConsumption][classSaving], paymentBase)
 
 applySupports(supports, Value) := result if {
 	nominalSupports := [value |
@@ -108,6 +101,11 @@ applySupports(supports, Value) := result if {
 }
 
 paymentAfterSupports := value if {
+	socialSupports := [[cred, support] |
+		cred := input.credentialData.credentials[_]
+		cred.type[_] == policyParameters.socialSupports[x].credentialType
+		support := policyParameters.socialSupports[x].support
+	]
 	previousValue := paymentAfterSavings
 	value := applySupports(socialSupports, previousValue)
 }

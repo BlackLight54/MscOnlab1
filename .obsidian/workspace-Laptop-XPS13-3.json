@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "971914a824d8aa4a",
+    "type": "split",
+    "children": [
+      {
+        "id": "55ed1fbb208caadd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1592971ac07ccf01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Önlab.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ec26941c527708c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c52716b34d87eddd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ComplexOPAPolicy-Ártámogatás/Components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1ee6f150847c23e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "7cfe3e8bc07766f2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6f9acfb3a44ac2e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f9fbb4e972357760",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "75b06aab90ed9af1",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "1cee80c040cf2c5e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "537cf540af5a886d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7f2b54b6fabd884",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2ecc08735d672fa7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Önlab.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5989e56c7128ec1f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Önlab.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6cde86b6b1e7d52b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "44884c6547ab0a61",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Önlab.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1592971ac07ccf01",
+  "lastOpenFiles": [
+    "Demos/walt.id_Dynamic_Policies_Demo/data/policies/Basic+VP",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/policies",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/credential-store/custodian",
+    "README.md",
+    "ComplexOPAPolicy-Ártámogatás/Design.md",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/did/created/did%3Akey%3Az6Mktjgke5DKuEVzcUwHjKo2wSQK515Yn9zgZiuCbjEQkeyQ",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/walt.db-journal",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/credential-store",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/walt.db",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/ebsi",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/vc/templates",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/vc/presented",
+    "Demos/walt.id_Dynamic_Policies_Demo/data/vc/created",
+    "Önlab.md",
+    "ComplexOPAPolicy-Ártámogatás/Components.md",
+    "!skeletonVP.json.md",
+    "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
+    "Untitled.md",
+    "local/waltid-ssikit/src/test/resources/diagram-0.png",
+    "local/waltid-ssikit/assets/logos-supporter.png",
+    "local/waltid-ssikit/CHANGELOG.md",
+    "local/waltid-ssikit/CODE_OF_CONDUCT.md",
+    "local/waltid-ssikit/CONTRIBUTING.md",
+    "local/waltid-ssikit/README.md",
+    "docs/opa-service.svg",
+    "docs/Install Open Policy Agent.md",
+    "docs/Install walt.id.md",
+    "Demos/Demo.md",
+    "Demos/walt.id_Dynamic_Policies_Demo/Basic Dynamic Policy demo.md",
+    "Demos/walt_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
+    "Demos/OPA_rego_demo/Rego demo.md",
+    "2023-04-11.md",
+    "Demos/rego_demo/Rego demo.md",
+    "Demo.md",
+    "opa-service.svg",
+    "docker_rego_demo/docker rego demo.md",
+    "dev.uniresolver.io.md"
+  ]
+}

@@ -1,53 +1,19 @@
 {
   "main": {
-    "id": "971914a824d8aa4a",
+    "id": "ec7c9e376980cd12",
     "type": "split",
     "children": [
       {
-        "id": "55ed1fbb208caadd",
+        "id": "f72bfd3d0a776620",
         "type": "tabs",
         "children": [
           {
-            "id": "1592971ac07ccf01",
+            "id": "e8f161d914b43abf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Önlab.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ec26941c527708c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Design.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9c2700da7d889c5a",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.2.7"
-              }
-            }
-          },
-          {
-            "id": "c52716b34d87eddd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ComplexOPAPolicy-Ártámogatás/Components.md",
                 "mode": "source",
                 "source": false
               }
@@ -59,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "1ee6f150847c23e4",
+    "id": "275fd2a3e83dcad2",
     "type": "split",
     "children": [
       {
-        "id": "7cfe3e8bc07766f2",
+        "id": "c4db643793a50174",
         "type": "tabs",
         "children": [
           {
-            "id": "a6f9acfb3a44ac2e",
+            "id": "2a2ed23acf691c4f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -77,7 +43,7 @@
             }
           },
           {
-            "id": "f9fbb4e972357760",
+            "id": "7c19bcaf53fd1a1d",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -92,15 +58,7 @@
             }
           },
           {
-            "id": "75b06aab90ed9af1",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          },
-          {
-            "id": "1cee80c040cf2c5e",
+            "id": "9d2e3d226a77b482",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -114,15 +72,15 @@
     "width": 300
   },
   "right": {
-    "id": "537cf540af5a886d",
+    "id": "3d2d43322247ce0a",
     "type": "split",
     "children": [
       {
-        "id": "a7f2b54b6fabd884",
+        "id": "b07c6803b38fbd5e",
         "type": "tabs",
         "children": [
           {
-            "id": "2ecc08735d672fa7",
+            "id": "49d6ae59f65c3902",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -139,7 +97,7 @@
             }
           },
           {
-            "id": "5989e56c7128ec1f",
+            "id": "78d334424fde3b9b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -151,7 +109,7 @@
             }
           },
           {
-            "id": "6cde86b6b1e7d52b",
+            "id": "69b32b3bbc3f08c9",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -162,7 +120,7 @@
             }
           },
           {
-            "id": "44884c6547ab0a61",
+            "id": "3c0acc2ae546289a",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -171,8 +129,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -189,43 +146,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1592971ac07ccf01",
+  "active": "e8f161d914b43abf",
   "lastOpenFiles": [
-    "ComplexOPAPolicy-Ártámogatás/Design.md",
-    "Önlab.md",
-    "ComplexOPAPolicy-Ártámogatás/Components.md",
-    "README.md",
-    "!skeletonVP.json.md",
-    "ComplexOPAPolicy-Ártámogatás/skeletonUserInput.json",
-    "ComplexOPAPolicy-Ártámogatás/policy.rego",
-    "ComplexOPAPolicy-Ártámogatás/skeletonVP.json",
-    "Demos/walt.id_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
-    "Untitled.md",
-    "Untitled",
-    "ComplexOPAPolicy-Ártámogatás",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/policies/Basic+VP",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/did/created/did%3Akey%3Az6MkkVvhp8udWprohnmPQbC2apdnqjrEjuSUVWaJ6QXQcyhB",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/walt.db-journal",
-    "Demos/walt.id_Dynamic_Policies_Demo/data/did/created/did%3Akey%3Az6MkuUdepm5q7TXKwLnzsjBEvYA56uAourh7WL3kstAr2AxT",
-    "local/waltid-ssikit/src/test/resources/diagram-0.png",
-    "local/waltid-ssikit/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream",
-    "local/waltid-ssikit/assets/logos-supporter.png",
-    "local/waltid-ssikit/CHANGELOG.md",
-    "local/waltid-ssikit/CODE_OF_CONDUCT.md",
-    "local/waltid-ssikit/CONTRIBUTING.md",
-    "local/waltid-ssikit/README.md",
-    "docs/opa-service.svg",
-    "docs/Install Open Policy Agent.md",
-    "docs/Install walt.id.md",
-    "Demos/Demo.md",
-    "Demos/walt.id_Dynamic_Policies_Demo/Basic Dynamic Policy demo.md",
-    "Demos/walt_My_first_VC_docker_demo/walt.id_My_First_VC_Demo.md",
-    "Demos/OPA_rego_demo/Rego demo.md",
-    "2023-04-11.md",
-    "Demos/rego_demo/Rego demo.md",
-    "Demo.md",
-    "opa-service.svg",
-    "docker_rego_demo/docker rego demo.md",
-    "dev.uniresolver.io.md"
+    "docs/research/Distributed_Security_Framework_for_Reliable_Threat.pdf",
+    "docs/research/Circuitree_A_Datalog_Reasoner_in_Zero-Knowledge.pdf",
+    "docs/research/goldwasser1985.pdf",
+    "docs/research/Zilch_A_Framework_for_Deploying_Transparent_Zero-Knowledge_Proofs.pdf",
+    "docs/research/project5_report_ver2.pdf"
   ]
 }

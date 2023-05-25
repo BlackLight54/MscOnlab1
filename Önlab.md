@@ -380,7 +380,7 @@ TODO: komponensábra: saját oldalunkon kicsámoljuk jogosult vagyok-e ártámog
 TODO:LOOKUP: Zilch cikk scholar-on, cite-ok alapjén keresni interktiv ZKP megoldást
 TODO: Datalog/Prolog ZKP rezolúció
 
-[[Design]] dokumentum elkészítése
+- [x] TODO: [[Design]] dokumentum elkészítése
 
 # 11. hét 
 ## Megtakarítási modell
@@ -391,3 +391,78 @@ támogatás százalálékos és nominális is lehet
 
 A szociális támogatás a megtakarításból következő összeget módosítja, százalékos vagy nominális
 Szociális támogatás checkboxos, ha teljesíti akkor apply-olódik
+
+# 12. hét 
+
+Complex OPA policy in VP sequence in walt.id:
+1.  Create a DID for the issuer
+2.  Issue a VC containing the REGO policy
+3.  Issue the VCs that that prove social support
+```json 
+{
+	"type": [
+		"VerifiableCredential",
+		"ChangedWorkcapacityCredential"
+	],
+	"category": "D1",
+	"percentage": 50
+}```
+4. Issue 12 credentials that prove past consumption, one for each month
+```json
+{
+	"type": [
+		"VerifiableCredential",
+		"ProofOfActualGasConsumptionCredential"
+	],
+	"year": "2023",
+	"month": "04",
+	"consumption": 1000
+}
+```
+5.  Create a VP from the VCs
+6.  Add a Custom policy, which only applies to VPs, and uses JSONPath to find the policy in the VP that is in the process of verification
+7.  Verify the VP, using this custom policy
+
+Összes korábbi TODO:
+
+walt.id:
+- [ ] TODO: ASK: walt.id foglalkozik-e valamilyen ZKP integrációjával
+	GH-on erre nincs semmi nyom 
+- [x] TODO: példa walt-ban VC ellenőrzésre egy VC-ben leírt policy-t, amit OPA rego segítségével értékelünk ki, use-case gázártámogatás: dinamikusan változik a támogatás, a VC egy állítás azzal kapcsolatban, hogy jogosult vagyok valamennyi gázártámogatásra, a VS akkor érvényes, ha kiszámíthatóan
+- [ ] TODO: Create template for VC-s that contain a policy 
+- [ ] TODO: Dynamic Policy Json(VC) -ből; ötlet: verifikálandó VC és policy VC elkülönítése VP-vel
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva, inputtól függően
+- [ ] TODO: Dynamic Policy VC-ből, komplex vc-t verifikálva, inputtól függően, külső adatot (OPA DATA) használva 
+- [ ] TODO: ASK: wal.id SSI kit OPA integrációjából kivezethetők lesznek-e a komplex eredények
+- [ ] TODO: ASK: VP-t hogy tudunk ellenőrizni
+- [ ] TODO: ASK: Hogy tudunk DLT-ről policy-t lekérdezni.
+
+OPA/REGO
+- [ ] TODO: LOOKUP: milyen ZKP-ra integrálható a rego mint deklaratív nyelv
+- [x] TODO: DatalogZKP rezolúció
+	- létezik: [Circuitree: a Datalog Reasoner in Zero-Knowledge](https://ieeexplore.ieee.org/iel7/6287639/6514899/09718332.pdf)
+- [ ] TODO: Prolog ZKP rezolúció
+- [x] TODO:LOOKUP: w3c és rego policy és a magasabb szintű protokolloknak van-e metszete? van-e szabvány a kommunikációs protokollokban(eljárásrendek kjommunikációja és kiértékelése)?
+	- nincs, erre egyedül egyelőre a walt.id alkalmas
+- [x] TODO:LOOKUP: Aries környékén készítenek-e OPA integrációt.
+	- Meeting notes-ban benne van: [DIDCom v2 WG](https://wiki.hyperledger.org/display/ARIES/Aries+DIDCommV2+Working+Group+2023-05-08+meeting)
+	- Hyperledger Tape használja az OPA-t : ????
+- [x] TODO: Modell a gázártámogatásra **rego-ban**, OPA-val, ZKP nélkül, VC-k -ben strukturált adat, VC-k: Social status, történelmi fogyasztás, stb.
+- [x] TODO: komponensábra: saját oldalunkon kicsámoljuk jogosult vagyok-e ártámogatásra.
+- [x] TODO: [[Design]] dokumentum elkészítése
+
+- [x] TODO: OpenID hogy működik?
+[[OpenID]]
+- [ ] TODO: ToIP? Melyik kommunikaciós protokoll lesz a nyerő? mik vannak? [Talán ez az?](https://trustoverip.org/blog/2023/01/05/the-toip-trust-spanning-protocol/)
+[[Trust Protocols]]
+- [ ] TODO: Survey: policies as verfiable credentials
+- [ ] TODO: READ: [You Can’t Spell Identity without an “I”](https://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html)
+- [x] TODO: LOOKUP: Zilch cikk scholar-on, cite-ok alapján keresni interktiv ZKP megoldást
+	- [Virgo](https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F19/projects/reports/project5_report_ver2.pdf)[GH](https://github.com/TAMUCrypto/virgo-plus)
+	- [zk-Stark](https://link.springer.com/chapter/10.1007/978-3-030-26954-8_23)
+
+- [ ] TODO: READ: possible use case for OPA [Distributed Security Framework for Reliable Threat Intelligence Sharing](https://www.researchgate.net/publication/343384076_Distributed_Security_Framework_for_Reliable_Threat_Intelligence_Sharing)
+
+
+
